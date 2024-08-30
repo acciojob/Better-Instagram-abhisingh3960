@@ -7,7 +7,7 @@ images.forEach(image => {
 });
 
 function dragStart(event) {
-  event.dataTransfer.setData('text/plain', event.target.innerText); 
+  event.dataTransfer.setData('text/plain', event.target.style.backgroundImage); 
 }
 
 
@@ -16,7 +16,7 @@ function dragOver(event) {
 }
 function drop(event) {
   event.preventDefault(); 
-  const draggedText = event.dataTransfer.getData('text'); 
+  const draggedText = event.dataTransfer.getData('text' ,event.target.style.backgroundImage); 
 
 	const targetText = event.target.innerText;
      event.target.innerText = draggedText;
